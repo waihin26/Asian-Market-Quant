@@ -2,6 +2,70 @@
 
 This repository provides a complete workflow for building a professional quant-research deck and dashboard for Asian cross-asset markets. The project is structured into six sequential workstreams, each with clear deliverables and recommended tools.
 
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8+
+- Jupyter Notebook
+- LaTeX (for generating reports)
+
+### Installation
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/waihin26/Asian-Market-Quant.git
+   cd Asian-Market-Quant
+   ```
+
+2. Install dependencies:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Place your Excel data file in the `data/raw` directory.
+
+### Usage
+
+You can work through the project steps in several ways:
+
+1. **Using the Python scripts**:
+
+   ```
+   python main.py path/to/your/excel_file.xlsx
+   ```
+
+2. **Using the Jupyter notebooks**:
+
+   ```
+   cd notebooks
+   jupyter notebook 01_asset_class_mapping.ipynb
+   ```
+
+3. **Generate LaTeX reports**:
+   ```
+   cd output/latex
+   pdflatex asset_class_mapping.tex
+   ```
+
+## Project Structure
+
+```
+Asian-Market-Quant/
+├── data/
+│   ├── raw/           # Original data files
+│   └── processed/     # Cleaned and processed data
+├── notebooks/         # Jupyter notebooks for each step
+├── output/
+│   ├── latex/         # LaTeX report files
+│   └── tables/        # CSV tables for analysis
+├── src/               # Source code modules
+├── requirements.txt   # Python dependencies
+└── README.md          # This file
+```
+
 ---
 
 ## 1. Scoping & Asset-Class Mapping

@@ -1,0 +1,20 @@
+# Core dependencies
+pandas==2.0.3
+numpy==1.24.3
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Data handling
+openpyxl==3.1.2  # For Excel file support
+xlrd==2.0.1      # For older Excel formats
+python-dateutil==2.8.2
+
+# Jupyter environment (for notebooks)
+jupyter==1.0.0
+notebook==6.5.4
+ipywidgets==8.0.6
+
+# Financial analysis
+vectorbt==0.25.4
+pyportfolioopt==1.5.4
+quantstats==0.0.62
