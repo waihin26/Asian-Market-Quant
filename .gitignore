@@ -14,12 +14,6 @@ build/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data and output
-data/raw/
-data/processed/
-output/latex/
-output/tables/
-
 # OS files
 .DS_Store
 Thumbs.db
