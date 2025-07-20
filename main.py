@@ -164,10 +164,7 @@ def process_excel_file(excel_path):
     # Save individual asset class data
     for asset_class, asset_df in asset_dfs.items():
         save_data(asset_df, f'data/processed/{asset_class}.pkl')
-    
-    # Create data dictionary
-    create_data_dictionary(df_processed, 'data/processed/data_dictionary.xlsx')
-    
+     
     # Generate LaTeX files
     print("\n5. Generating LaTeX tables...")
     os.makedirs('output/latex', exist_ok=True)
@@ -188,7 +185,6 @@ def process_excel_file(excel_path):
     print("2. Risk budget table (output/latex/risk_budget_table.tex)")
     print("3. Full LaTeX document (output/latex/asset_class_mapping.tex)")
     print("4. Processed data (data/processed/all_assets.xlsx)")
-    print("5. Data dictionary (data/processed/data_dictionary.xlsx)")
     
     print("\nNext steps:")
     print("1. Compile the LaTeX document to generate a PDF report")

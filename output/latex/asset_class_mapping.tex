@@ -1,4 +1,3 @@
-
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{tabularx}
@@ -68,37 +67,139 @@ Commodities & 10.0\% \\
 
 \section{Asset Class Descriptions}
 
-\subsection{Emerging-Asia Equity}
-This category includes the major Asian equity indices (MXAP, MXAS) and country-specific indices 
-(PCOMP for Philippines, JCI for Indonesia, etc.). These provide exposure to regional beta with 
-varying degrees of macro sensitivity.
+\subsection{Emerging-Asia Equity (12 instruments)}
+\textbf{Description:} Emerging-Asia equity indices \& ETFs provide broad exposure to regional equity markets.\\
+\begin{itemize}
+\item \textbf{Currency:} Mostly USD
+\item \textbf{Strategy Rationale:} Regional beta + macro sensitivity, liquid access to Asian growth
+\item \textbf{Instruments:}
+  \begin{itemize}
+    \item MXAP Index - MSCI Asia Pacific Index
+    \item MXAPJ Index - MSCI Asia Pacific ex-Japan Index
+    \item MXAS Index - MSCI Asia Index
+    \item MXASJ Index - MSCI Asia ex-Japan Index
+    \item PCOMP Index - Philippines Stock Exchange Index
+    \item JCI Index - Jakarta Composite Index
+    \item FBMKLCI Index - FTSE Bursa Malaysia KLCI
+    \item SET Index - Stock Exchange of Thailand Index
+    \item STI Index - Straits Times Index
+    \item NU710465 Index - Asia Region Index
+    \item EPHE US Index - iShares MSCI Philippines ETF
+    \item FMETF PM Equity - First Metro Philippine Equity ETF
+  \end{itemize}
+\end{itemize}
 
-\subsection{Commodities}
-Our commodity exposure includes gold spot (GOLDS), Brent crude front-month (CO1), generic Softs (S 1), 
-and a Philippines gold ETF (FMETF). This basket provides inflation hedging properties and potential
-carry from rolling futures contracts.
+\subsection{Commodities (3 instruments)}
+\textbf{Description:} Strategic commodity exposure through major benchmarks\\
+\begin{itemize}
+\item \textbf{Currency:} USD
+\item \textbf{Strategy Rationale:} Inflation hedge + carry opportunities via futures roll
+\item \textbf{Instruments:}
+  \begin{itemize}
+    \item GOLDS Index - Gold Spot Price
+    \item CO1 Comdty - Brent Crude Oil Front Month
+    \item S1 Comdty - Generic Softs Contract
+  \end{itemize}
+\end{itemize}
 
-\subsection{Developed-Market Equity}
-We include S\&P 500 (SPX) and Nikkei 225 (NKY) as developed market benchmarks that serve as 
-useful proxies for stress testing our portfolio and measuring correlation regimes.
+\subsection{Developed Equity (2 instruments)}
+\textbf{Description:} Major developed market benchmarks\\
+\begin{itemize}
+\item \textbf{Currency:} USD/JPY
+\item \textbf{Strategy Rationale:} Global risk sentiment indicators + regime detection
+\item \textbf{Instruments:}
+  \begin{itemize}
+    \item SPX Index - S\&P 500 Index
+    \item NKY Index - Nikkei 225
+  \end{itemize}
+\end{itemize}
 
-\subsection{FX Crosses}
-We track several USD crosses including USDPHP, USDMYR, USDIDR, USDSGD, and USDJPY. 
-These provide exposure to carry and momentum factors that tend to work well in Asia.
+\subsection{FX Crosses (5 instruments)}
+\textbf{Description:} Major Asian currency pairs vs USD\\
+\begin{itemize}
+\item \textbf{Currency:} USD crosses
+\item \textbf{Strategy Rationale:} Carry opportunities + momentum signals
+\item \textbf{Instruments:}
+  \begin{itemize}
+    \item USDPHP Index - USD/PHP Exchange Rate
+    \item USDMYR Index - USD/MYR Exchange Rate
+    \item USDIDR Index - USD/IDR Exchange Rate
+    \item USDSGD Index - USD/SGD Exchange Rate
+    \item USDJPY Index - USD/JPY Exchange Rate
+  \end{itemize}
+\end{itemize}
 
-\subsection{Sovereign Yields}
-Our rates exposure includes 5-year sovereign yields: US Treasury (USGG5YR), Philippine government bonds (GTPHP5yr), 
-and USD-denominated Philippine sovereign debt (GTUSDPH5Y). These provide duration exposure and EM credit risk.
+\subsection{Sovereign Yields (3 instruments)}
+\textbf{Description:} Government bonds and sovereign debt\\
+\begin{itemize}
+\item \textbf{Currency:} USD and local currency
+\item \textbf{Strategy Rationale:} Duration exposure + EM credit risk premium
+\item \textbf{Instruments:}
+  \begin{itemize}
+    \item USGG5YR Index - US 5-Year Treasury Yield
+    \item GTPHP5yr Corp - Philippines 5-Year Government Bond
+    \item GTUSDPH5Y Corp - USD-denominated Philippines 5-Year Sovereign Bond
+  \end{itemize}
+\end{itemize}
 
-\section{Next Steps}
+\section{Portfolio Construction Process}
 
-With this asset class mapping complete, we will proceed to:
+\subsection{Risk Budgeting Implementation}
+The portfolio construction process follows a hierarchical approach:
+\begin{enumerate}
+    \item \textbf{Asset Class Level (Stage 1)}
+    \begin{itemize}
+        \item Apply risk budget weights to each asset class
+        \item Emerging Asia Equity (35\%) - Regional growth exposure
+        \item Developed Equity (25\%) - Global risk factors
+        \item Sovereign Yields (20\%) - Duration + credit exposure
+        \item FX (10\%) - Carry + momentum factors
+        \item Commodities (10\%) - Inflation hedge
+    \end{itemize}
+    
+    \item \textbf{Instrument Level (Stage 2)}
+    \begin{itemize}
+        \item Within each asset class, apply hierarchical risk parity
+        \item Account for correlation clusters
+        \item Adjust for liquidity constraints
+        \item Consider market microstructure
+    \end{itemize}
+\end{enumerate}
+
+\section{Implementation Roadmap}
 
 \begin{enumerate}
-    \item Implement data cleaning and currency normalization
-    \item Perform exploratory analysis to identify correlations and regime changes
-    \item Design signal prototypes for each asset class
-    \item Apply hierarchical risk parity within our risk budget framework
+    \item \textbf{Data Engineering (Current Phase)}
+    \begin{itemize}
+        \item Implement robust data cleaning pipeline
+        \item Normalize all prices to USD
+        \item Handle corporate actions and futures rolls
+        \item Create standardized return series
+    \end{itemize}
+    
+    \item \textbf{Analysis \& Signal Development}
+    \begin{itemize}
+        \item Perform correlation regime analysis
+        \item Develop asset-class specific signals
+        \item Test signal stability and turnover
+        \item Validate economic intuition
+    \end{itemize}
+    
+    \item \textbf{Portfolio Construction}
+    \begin{itemize}
+        \item Implement hierarchical risk parity
+        \item Apply risk budgeting overlay
+        \item Develop rebalancing framework
+        \item Create monitoring dashboard
+    \end{itemize}
+    
+    \item \textbf{Risk Management}
+    \begin{itemize}
+        \item Design stress testing framework
+        \item Implement risk limits
+        \item Create performance attribution
+        \item Monitor factor exposures
+    \end{itemize}
 \end{enumerate}
 
 \end{document}

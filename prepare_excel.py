@@ -1,6 +1,6 @@
 """
-Script to prepare the Excel data for the Asian Market Quant project.
-This script helps organize the Excel file, placing it in the right format.
+This script copies the raw Excel into data/processed/, reads the row for tickers and matches them to ASSET_MAPPING buckets.
+It then prints a categorized summary of found vs. missing tickers with validation checks.
 
 Usage:
     python prepare_excel.py path/to/excel_file.xlsx
@@ -120,7 +120,7 @@ def prepare_excel_file(excel_path, output_dir='data/processed'):
             for ticker in uncategorized:
                 print(f"  - {ticker}")
         
-        # Now load some sample data to check format
+        # Load some sample data to check format
         print("\nLoading sample data rows...")
         sample_data = pd.read_excel(excel_path, skiprows=7, nrows=5)
         print(sample_data.head())
@@ -177,8 +177,7 @@ def main():
     if prepared_path:
         print(f"\nExcel file prepared and saved to: {prepared_path}")
         print("\nNext steps:")
-        print("1. Run `python main.py {prepared_path}` to perform asset class mapping")
-        print("2. Or open the notebook: `jupyter notebook notebooks/01_asset_class_mapping.ipynb`")
+        print("Run `python main.py {prepared_path}` to perform asset class mapping")
     else:
         print("\nFailed to prepare Excel file.")
 
