@@ -24,7 +24,7 @@ ASSET_MAPPING = {
     },
     'commodities': {
         'tickers': ['GOLDS Index', 'CO1 Comdty', 'S 1 Comdty'],
-        'description': 'Commodities (Gold spot, Brent front-month, generic Softs, Philippines gold ETF)',
+        'description': 'Commodities (Gold spot, Brent front-month, generic Softs)',
         'currency': 'USD',
         'comment': 'Adds inflation hedge, carry via roll',
         'risk_bucket': 'commodities'  # For risk budgeting
@@ -178,7 +178,6 @@ def print_risk_budget():
 
 def main():
     """Main function to demonstrate usage."""
-    # Example usage
     print("Asset Class Mapping for Asian Market Quant Project")
     print("=================================================")
     

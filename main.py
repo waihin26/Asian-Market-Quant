@@ -5,7 +5,6 @@ This script:
 1. Loads the Excel data
 2. Maps tickers to asset classes 
 3. Generates LaTeX tables for reporting
-4. Creates a data dictionary
 
 Usage:
     python main.py [excel_file_path]
